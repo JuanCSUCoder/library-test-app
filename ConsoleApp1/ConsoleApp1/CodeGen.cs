@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.CodeDom.Compiler;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -19,7 +20,14 @@ namespace ConsoleApp1
             string file = prefile + path + midfile + code + posfile;
             return file;
         }
-        public static void Compiler(string file)
+
+        public static void WriteFile(string file)
+        {
+            StreamWriter a = new StreamWriter("codegenerated.cs");
+            a.WriteLine(file);
+            a.Dispose();
+        }
+        public static void Compiler()
         {
             CodeDomProvider provedor = CodeDomProvider.CreateProvider("CSharp");
             CompilerParameters parames = new CompilerParameters();
@@ -28,7 +36,7 @@ namespace ConsoleApp1
             parames.TreatWarningsAsErrors = false;
             parames.GenerateInMemory = false;
 
-            CompilerResults comp = provedor.CompileAssemblyFromFile(parames,file);
+            CompilerResults comp = provedor.CompileAssemblyFromFile(parames, "codegenerated.cs");
 
         }
 
