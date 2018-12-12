@@ -37,7 +37,9 @@ namespace ConsoleApp1
             parames.GenerateInMemory = false;
 
             CompilerResults comp = provedor.CompileAssemblyFromFile(parames, "codegenerated.cs");
-
+            if (comp.Errors.Count>0) {
+                Console.WriteLine("Error"+comp.Errors.ToString());
+            }
         }
 
     }
