@@ -12,6 +12,8 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Esta aplicación sirve para probar librerias!!");
             Console.ReadKey();
+
+            //Codigo para probar las funciones de una libreria
         }
     }
 }
