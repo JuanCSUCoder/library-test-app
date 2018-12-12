@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
+
 namespace ConsoleApp1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Esta aplicación sirve para probar librerias!!");
+            Console.WriteLine("This application test libraries!!");
             Console.ReadKey();
 
             Console.Write("Enter the path of the dll file: ");
